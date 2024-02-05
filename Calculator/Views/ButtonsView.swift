@@ -43,7 +43,7 @@ struct ButtonsView: View {
         CalcButtonModel(calcButton: .four),
         CalcButtonModel(calcButton: .five),
         CalcButtonModel(calcButton: .six),
-        CalcButtonModel(calcButton: .divide,color: foregroundRightButtonColor),
+        CalcButtonModel(calcButton: .subtract,color: foregroundRightButtonColor),
     ]),
     RowOfCalcButtonsModel(row: [
         CalcButtonModel(calcButton: .one),
@@ -84,8 +84,8 @@ struct ButtonsView: View {
     func buttonPressed(calcButton: CalcButton) {
         switch calcButton {
         case .clear:
-            currentComputation = "poggers"
-            mainResult = "31"
+            currentComputation = ""
+            mainResult = "0"
             print("clear")
         case .add,.subtract,.divide,.multiply:
             print("operations")
@@ -94,6 +94,19 @@ struct ButtonsView: View {
             }
            
         case .equal,.negative:
+            if !currentComputation.isEmpty {
+                if !lastChatIsAnOperator(str:currentComputation){
+                    let sign = calcButton == .negative ? -1 : 1.0
+                    
+                    mainResult = formatResult(val: sign * calculateResults())
+                    
+                    if calcButton == .negative {
+                        currentComputation = mainResult
+                    }
+                }
+            }
+            
+            
             print("eq, negative")
         case .decimal:
             print("decimal")
@@ -109,6 +122,36 @@ struct ButtonsView: View {
             print("digits")
            appendToCurrentComputation(calcButton: calcButton)
         }
+    }
+    
+    
+    // Implements the actual calculation
+    func calculateResults() -> Double {
+        let visibleWorkings: String = currentComputation
+        var workings = visibleWorkings.replacingOccurrences(of: "%", with: "*0.01")
+        workings = workings.replacingOccurrences(of: multiplySymbol, with: "*")
+        workings = workings.replacingOccurrences(of: divisonSymbol, with: "/")
+        
+        
+        // If we have "35." this will be replaced by "35.0"
+        if getLastChar(str: visibleWorkings) == "." {
+            workings += "0"
+        }
+        
+        // Key point!
+        // Actual computations
+        
+        let expr = NSExpression(format: workings)
+        let exprValue = expr.expressionValue(with: nil, context: nil) as! Double
+        
+        return exprValue
+        
+        
+        
+        
+        
+        
+        
     }
     
     
