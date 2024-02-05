@@ -9,7 +9,7 @@ import SwiftUI
 
 let buttonBackgroundColor = Color("buttonBackground")
 let foregroundDigitColor = Color("foregroundDigits")
-let foregroubdRightButtonColor = Color("foregroundRightButtons")
+let foregroundRightButtonColor = Color("foregroundRightButtons")
 let foregroundTopButtonColor = Color("foregroundTopButtons")
 let primaryBackgroundColor = Color("primaryBackground")
 let secondaryBackgroundColor = Color("SecondaryBackground")

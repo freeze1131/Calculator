@@ -50,7 +50,7 @@ struct SingleButtonView: View {
 #Preview {
     VStack{
         SingleButtonView(calcButton: .one, fgColor: foregroundDigitColor, bgColor:buttonBackgroundColor)
-        SingleButtonView(calcButton: .add, fgColor: foregroubdRightButtonColor, bgColor:buttonBackgroundColor)
+        SingleButtonView(calcButton: .add, fgColor: foregroundRightButtonColor, bgColor:buttonBackgroundColor)
         SingleButtonView(calcButton: .undo, fgColor: foregroundTopButtonColor, bgColor:buttonBackgroundColor)
     }
 }
