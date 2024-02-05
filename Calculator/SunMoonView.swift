@@ -10,7 +10,7 @@ import SwiftUI
 struct SunMoonView: View {
     var lightMode: Bool
     var body: some View {
-       Text("Hello lightmode")
+        Text("Hello \(lightMode ? "light" : "dark") ")
        
     }
 }

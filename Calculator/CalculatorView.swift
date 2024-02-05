@@ -31,11 +31,13 @@ struct CalculatorView: View {
                 
                 Spacer()
                 
-                ButtonsView(mainResult: $mainResult,currentComputation: $currentComputation)
+                ButtonsView(currentComputation: $currentComputation, mainResult: $mainResult)
             }
             .padding()
         }
+        .environment(\.colorScheme,lightMode ? .light : .dark)
     }
+        
 }
 
 #Preview {
