@@ -49,6 +49,7 @@
 		94EBB3142B70DA76009F057F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				94FA55292B70066C00E70B69 /* CalculatorView.swift */,
 				94EBB3182B70DCD1009F057F /* SingleButtonView.swift */,
 				94EBB30E2B70D2DD009F057F /* SunMoonView.swift */,
 				94EBB3122B70D4D6009F057F /* ButtonsView.swift */,
@@ -64,6 +65,14 @@
 				94EBB30C2B70D04D009F057F /* imageConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		94EBB31C2B711A90009F057F /* Helper Functions */ = {
+			isa = PBXGroup;
+			children = (
+				94EBB31A2B710626009F057F /* StringHelperFunction.swift */,
+			);
+			path = "Helper Functions";
 			sourceTree = "<group>";
 		};
 		94FA551B2B70066C00E70B69 = {
@@ -87,11 +96,10 @@
 			children = (
 				94EBB3152B70DA88009F057F /* Constants */,
 				94EBB3142B70DA76009F057F /* Views */,
-				94FA55292B70066C00E70B69 /* CalculatorView.swift */,
+				94EBB31C2B711A90009F057F /* Helper Functions */,
 				94FA55272B70066C00E70B69 /* CalculatorApp.swift */,
 				94FA552B2B70066D00E70B69 /* Assets.xcassets */,
 				94FA552D2B70066D00E70B69 /* Preview Content */,
-				94EBB31A2B710626009F057F /* StringHelperFunction.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";

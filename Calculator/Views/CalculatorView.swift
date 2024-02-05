@@ -26,7 +26,6 @@ struct CalculatorView: View {
                         
                     }
                 Spacer()
-                // TODO: Change constant paramaters with dynamic ones
                 ComputationView(mainResult: mainResult,currentComputation: currentComputation)
                 
                 Spacer()
