@@ -109,6 +109,30 @@ struct ButtonsView: View {
             
             print("eq, negative")
         case .decimal:
+            if let lastOfDecimal = currentComputation.lastIndex(of: ".") {
+                if lastCharIsDigit(str: currentComputation){
+                    let startIndex = currentComputation.index(lastOfDecimal,offsetBy: 1)
+                    let endIndex = currentComputation.endIndex
+                    let range = startIndex..<endIndex
+                    
+                    let rightSubstring = String(currentComputation[range])
+                    
+                    
+                    // Only have digits to the right ".", do not add another "."
+                    // otherwise, add "."
+                    if Int(rightSubstring) == nil && !rightSubstring.isEmpty {
+                        currentComputation += "."
+                    }
+                    
+                }
+            }  else {
+                if currentComputation.isEmpty {
+                    currentComputation += "0."
+                } else if lastCharIsDigit(str: currentComputation) {
+                    currentComputation += "."
+                }
+            }
+            
             print("decimal")
         case .undo:
             currentComputation = String(currentComputation.dropLast())
