@@ -69,6 +69,7 @@ struct ButtonsView: View {
                         Button(action: {
                             // TODO: logic will be here
                             print("Button pressed")
+                            buttonPressed(calcButton: item.calcButton)
                         }, label: {
                             SingleButtonView(calcButton: item.calcButton, fgColor: item.color, bgColor: buttonBackgroundColor)
                         })
@@ -79,6 +80,40 @@ struct ButtonsView: View {
         .padding()
      
         
+    }
+    func buttonPressed(calcButton: CalcButton) {
+        switch calcButton {
+        case .clear:
+            currentComputation = "poggers"
+            mainResult = "31"
+            print("clear")
+        case .add,.subtract,.divide,.multiply:
+            print("operations")
+            if lastCharIsDigitOrPercent(str:currentComputation) {
+                appendToCurrentComputation(calcButton: calcButton)
+            }
+           
+        case .equal,.negative:
+            print("eq, negative")
+        case .decimal:
+            print("decimal")
+        case .undo:
+            currentComputation = String(currentComputation.dropLast())
+            print("undo")
+        case .percent:
+            if lastCharIsDigit(str: currentComputation) {
+                appendToCurrentComputation(calcButton: calcButton)
+            }
+            print("percent")
+        default:
+            print("digits")
+           appendToCurrentComputation(calcButton: calcButton)
+        }
+    }
+    
+    
+    func appendToCurrentComputation(calcButton:CalcButton) {
+        currentComputation += calcButton.rawValue
     }
 }
 
