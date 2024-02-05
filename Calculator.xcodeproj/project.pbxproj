@@ -14,6 +14,7 @@
 		94EBB3172B70DADA009F057F /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EBB3162B70DADA009F057F /* Enumerations.swift */; };
 		94EBB3192B70DCD1009F057F /* SingleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EBB3182B70DCD1009F057F /* SingleButtonView.swift */; };
 		94EBB31B2B710626009F057F /* StringHelperFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EBB31A2B710626009F057F /* StringHelperFunction.swift */; };
+		94EBB31E2B711AF6009F057F /* iPad Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EBB31D2B711AF6009F057F /* iPad Support.swift */; };
 		94FA55282B70066C00E70B69 /* CalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA55272B70066C00E70B69 /* CalculatorApp.swift */; };
 		94FA552A2B70066C00E70B69 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA55292B70066C00E70B69 /* CalculatorView.swift */; };
 		94FA552C2B70066D00E70B69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94FA552B2B70066D00E70B69 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		94EBB3162B70DADA009F057F /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		94EBB3182B70DCD1009F057F /* SingleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonView.swift; sourceTree = "<group>"; };
 		94EBB31A2B710626009F057F /* StringHelperFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelperFunction.swift; sourceTree = "<group>"; };
+		94EBB31D2B711AF6009F057F /* iPad Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iPad Support.swift"; sourceTree = "<group>"; };
 		94FA55242B70066C00E70B69 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94FA55272B70066C00E70B69 /* CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorApp.swift; sourceTree = "<group>"; };
 		94FA55292B70066C00E70B69 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		94EBB31C2B711A90009F057F /* Helper Functions */ = {
 			isa = PBXGroup;
 			children = (
+				94EBB31D2B711AF6009F057F /* iPad Support.swift */,
 				94EBB31A2B710626009F057F /* StringHelperFunction.swift */,
 			);
 			path = "Helper Functions";
@@ -190,6 +193,7 @@
 				94FA552A2B70066C00E70B69 /* CalculatorView.swift in Sources */,
 				94EBB3112B70D383009F057F /* ComputationView.swift in Sources */,
 				94EBB30F2B70D2DD009F057F /* SunMoonView.swift in Sources */,
+				94EBB31E2B711AF6009F057F /* iPad Support.swift in Sources */,
 				94FA55282B70066C00E70B69 /* CalculatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
