@@ -11,16 +11,30 @@ struct CalculatorView: View {
     
     @State var lightMode: Bool = true
     @State var currentComputation: String = ""
-   
+    @State var mainResult: String = ""
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            primaryBackgroundColor.ignoresSafeArea()
+            
+            VStack {
+                SunMoonView(lightMode: lightMode)
+                    .onTapGesture {
+                        withAnimation {
+                            lightMode.toggle()
+                        }
+                        
+                    }
+                Spacer()
+                // TODO: Change constant paramaters with dynamic ones
+                ComputationView(mainResult: "8",currentComputation: "3+3")
+                
+                Spacer()
+                
+                ButtonsView(mainResult: $mainResult,currentComputation: $currentComputation)
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
