@@ -11,7 +11,7 @@ struct CalculatorView: View {
     
     @State var lightMode: Bool = true
     @State var currentComputation: String = ""
-    @State var 
+   
     
     var body: some View {
         VStack {
