@@ -7,7 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CalculatorView: View {
+    
+    @State var lightMode: Bool = true
+    @State var currentComputation: String = ""
+    @State var 
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +25,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    CalculatorView()
 }
