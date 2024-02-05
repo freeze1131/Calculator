@@ -76,6 +76,9 @@ struct ButtonsView: View {
                 }
             }
         }
+        .padding()
+     
+        
     }
 }
 
