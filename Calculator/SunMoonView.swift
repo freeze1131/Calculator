@@ -10,11 +10,24 @@ import SwiftUI
 struct SunMoonView: View {
     var lightMode: Bool
     var body: some View {
-        Text("Hello \(lightMode ? "light" : "dark") ")
+        HStack(spacing: 15) {
+            Image(systemName: "sun.max")
+                .imageScale(.large)
+                .foregroundStyle(lightMode ? sunOrMoonSelected : sunOrMoonNotSelected)
+            Image(systemName: "moon")
+                .imageScale(.large)
+                .foregroundStyle(lightMode ? sunOrMoonNotSelected : sunOrMoonSelected)
+        }
+        .padding()
+        .background(secondaryBackgroundColor)
+        .clipShape(Capsule())
        
     }
 }
 
 #Preview {
-    SunMoonView(lightMode: true)
+    VStack{
+        SunMoonView(lightMode: true)
+        SunMoonView(lightMode: false)
+    }
 }
