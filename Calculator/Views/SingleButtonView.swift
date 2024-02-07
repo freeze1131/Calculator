@@ -38,8 +38,8 @@ struct SingleButtonView: View {
             Text(text ?? "")
             Image(systemName: systemImage ?? "")
         }
-        .font(.title2)
-        .fontWeight(.semibold)
+        .font(UIDevice.isIPad ? .largeTitle : .body)
+        .fontWeight(UIDevice.isIPad ? .bold : .semibold)
         .frame(width: buttonDimension,height: buttonDimension)
         .foregroundStyle(fgColor)
         .background(bgColor)

@@ -67,8 +67,6 @@ struct ButtonsView: View {
                 GridRow {
                     ForEach(rowOfCalcButtonsModel.row) { item in
                         Button(action: {
-                            // TODO: logic will be here
-                            print("Button pressed")
                             buttonPressed(calcButton: item.calcButton)
                         }, label: {
                             SingleButtonView(calcButton: item.calcButton, fgColor: item.color, bgColor: buttonBackgroundColor)
@@ -86,9 +84,9 @@ struct ButtonsView: View {
         case .clear:
             currentComputation = ""
             mainResult = "0"
-            print("clear")
+         
         case .add,.subtract,.divide,.multiply:
-            print("operations")
+          
             if lastCharIsDigitOrPercent(str:currentComputation) {
                 appendToCurrentComputation(calcButton: calcButton)
             }
@@ -107,7 +105,7 @@ struct ButtonsView: View {
             }
             
             
-            print("eq, negative")
+        
         case .decimal:
             if let lastOfDecimal = currentComputation.lastIndex(of: ".") {
                 if lastCharIsDigit(str: currentComputation){
@@ -132,18 +130,13 @@ struct ButtonsView: View {
                     currentComputation += "."
                 }
             }
-            
-            print("decimal")
         case .undo:
             currentComputation = String(currentComputation.dropLast())
-            print("undo")
         case .percent:
             if lastCharIsDigit(str: currentComputation) {
                 appendToCurrentComputation(calcButton: calcButton)
             }
-            print("percent")
         default:
-            print("digits")
            appendToCurrentComputation(calcButton: calcButton)
         }
     }

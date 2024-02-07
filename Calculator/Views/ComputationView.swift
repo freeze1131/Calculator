@@ -18,7 +18,8 @@ struct ComputationView: View {
                 Spacer()
                 Text(currentComputation)
                     .foregroundStyle(foregroundDigitColor)
-                .lineLimit(1)
+                    .lineLimit(1)
+                    .font(UIDevice.isIPad ? .largeTitle : .body)
             }
             .minimumScaleFactor(0.1)
             
@@ -26,9 +27,9 @@ struct ComputationView: View {
                 Spacer()
                 Text(mainResult)
                     .foregroundStyle(foregroundDigitColor)
-                    .font(.largeTitle)
                     .fontWeight(.bold)
                 .lineLimit(1)
+                .font(UIDevice.isIPad ? .largeTitle : .body)
             }
             .minimumScaleFactor(0.1)
            
