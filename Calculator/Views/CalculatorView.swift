@@ -14,26 +14,25 @@ struct CalculatorView: View {
     @State var mainResult: String = ""
     
     var body: some View {
-        ZStack {
-            primaryBackgroundColor.ignoresSafeArea()
-            
-            VStack {
-                SunMoonView(lightMode: lightMode)
-                    .onTapGesture {
-                        withAnimation {
-                            lightMode.toggle()
+            ZStack {
+                primaryBackgroundColor.ignoresSafeArea()
+                
+                VStack {
+                    SunMoonView(lightMode: lightMode)
+                        .onTapGesture {
+                            withAnimation {
+                                lightMode.toggle()
+                            }
                         }
-                        
-                    }
-                Spacer()
-                ComputationView(mainResult: mainResult,currentComputation: currentComputation)
-                
-                Spacer()
-                
-                ButtonsView(currentComputation: $currentComputation, mainResult: $mainResult)
+                    Spacer()
+                    ComputationView(mainResult: mainResult,currentComputation: currentComputation)
+                    
+                    Spacer()
+                    
+                    ButtonsView(currentComputation: $currentComputation, mainResult: $mainResult)
+                }
+                .padding()
             }
-            .padding()
-        }
         .environment(\.colorScheme,lightMode ? .light : .dark)
     }
         
